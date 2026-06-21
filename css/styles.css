@@ -45,8 +45,8 @@ h3 { font-size: 24px; font-weight: 500; }
 .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(139, 92, 246, 0.45); }
 .btn-secondary { background: rgba(139, 92, 246, 0.06); color: var(--purple-deep); border: 2px solid var(--lilac); }
 .btn-secondary:hover { background: rgba(139, 92, 246, 0.12); }
-.btn-white { background: linear-gradient(135deg, #FFFFFF, #F1EAFF); color: var(--purple-deep); box-shadow: 0 10px 30px rgba(45,43,61,0.22); }
-.btn-white:hover { transform: translateY(-2px); box-shadow: 0 14px 38px rgba(45,43,61,0.28); }
+.btn-white { background: linear-gradient(135deg, #FFFFFF, #F1EAFF); color: var(--purple-deep); box-shadow: 0 0 32px 6px rgba(255,255,255,0.5), 0 8px 26px rgba(45,43,61,0.18); }
+.btn-white:hover { transform: translateY(-2px); box-shadow: 0 0 44px 10px rgba(255,255,255,0.65), 0 12px 34px rgba(45,43,61,0.24); }
 .btn-wa { background: #25D366; color: #fff; }
 
 /* ========== NAV ========== */
