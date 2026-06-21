@@ -351,12 +351,9 @@ h3 { font-size: 24px; font-weight: 500; }
   .benefits-grid::-webkit-scrollbar, .journey-flow::-webkit-scrollbar, .test-grid::-webkit-scrollbar { height: 4px; }
   .benefits-grid::-webkit-scrollbar-track, .journey-flow::-webkit-scrollbar-track, .test-grid::-webkit-scrollbar-track { background: var(--soft-violet); border-radius: 2px; }
   .benefits-grid::-webkit-scrollbar-thumb, .journey-flow::-webkit-scrollbar-thumb, .test-grid::-webkit-scrollbar-thumb { background: var(--lilac); border-radius: 2px; }
-  .workshop-details {
-    display: flex; overflow-x: auto; gap: 10px;
-    scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;
-    padding-bottom: 8px;
-  }
-  .workshop-detail { flex: 0 0 58%; scroll-snap-align: start; }
+  .workshop-info, .workshop-form-wrap { min-width: 0; padding: 28px 22px; }
+  .workshop-details { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .workshop-detail { min-width: 0; }
   .form-row { grid-template-columns: 1fr; }
   .gc-features { grid-template-columns: 1fr 1fr; }
   .gc-actions { flex-direction: column; }
@@ -366,6 +363,5 @@ h3 { font-size: 24px; font-weight: 500; }
 }
 @media (max-width: 480px) {
   .prop-card { flex-basis: 82%; }
-  .gc-features { grid-template-columns: 1fr; }
   .proof-wall img { height: 220px; }
 }
