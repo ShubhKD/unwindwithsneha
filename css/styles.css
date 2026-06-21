@@ -50,7 +50,7 @@ h3 { font-size: 24px; font-weight: 500; }
 
 /* ========== NAV ========== */
 .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 14px 0; background: transparent; transition: all 0.3s; }
-.nav.scrolled { background: rgba(255,255,255,0.97); backdrop-filter: blur(16px); border-bottom: 1px solid var(--soft-violet); padding: 10px 0; }
+.nav.scrolled { background: rgba(255,255,255,0.6); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); border-bottom: 1px solid rgba(255,255,255,0.5); box-shadow: 0 4px 30px rgba(45,43,61,0.07); padding: 10px 0; }
 .nav .container { display: flex; align-items: center; }
 .nav-brand { display: inline-flex; align-items: center; gap: 9px; font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 500; color: var(--deep-violet); white-space: nowrap; }
 .nav-logo { width: 36px; height: 36px; flex-shrink: 0; }
