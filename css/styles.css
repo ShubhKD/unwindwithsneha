@@ -45,7 +45,8 @@ h3 { font-size: 24px; font-weight: 500; }
 .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(139, 92, 246, 0.45); }
 .btn-secondary { background: rgba(139, 92, 246, 0.06); color: var(--purple-deep); border: 2px solid var(--lilac); }
 .btn-secondary:hover { background: rgba(139, 92, 246, 0.12); }
-.btn-white { background: var(--white); color: var(--purple-deep); box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+.btn-white { background: linear-gradient(135deg, #FFFFFF, #F1EAFF); color: var(--purple-deep); box-shadow: 0 10px 30px rgba(45,43,61,0.22); }
+.btn-white:hover { transform: translateY(-2px); box-shadow: 0 14px 38px rgba(45,43,61,0.28); }
 .btn-wa { background: #25D366; color: #fff; }
 
 /* ========== NAV ========== */
@@ -271,11 +272,11 @@ h3 { font-size: 24px; font-weight: 500; }
 .faq-answer { padding: 0 0 18px; font-size: 15px; line-height: 1.7; }
 
 /* ========== BOTTOM CTA ========== */
-.bottom-cta { padding: 56px 40px; text-align: center; background: var(--deep-violet); }
+.bottom-cta { padding: 56px 40px; text-align: center; background: linear-gradient(135deg, var(--purple-deep), var(--purple-bright)); }
 .bottom-cta p { font-family: 'Cormorant Garamond', serif; font-size: 28px; color: #fff; margin-bottom: 18px; font-weight: 500; }
 
 /* ========== FOOTER ========== */
-.footer { padding: 40px 0 20px; background: var(--deep-violet); border-top: 1px solid rgba(255,255,255,0.08); }
+.footer { padding: 40px 0 20px; background: var(--deep-violet); }
 .footer-inner { display: flex; justify-content: space-between; align-items: flex-start; gap: 32px; margin-bottom: 32px; }
 .footer-brand-text { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 500; color: var(--lilac); margin-bottom: 6px; }
 .footer-desc { font-size: 13px; color: var(--muted-violet); max-width: 280px; line-height: 1.5; }
