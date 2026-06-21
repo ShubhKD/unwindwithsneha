@@ -307,6 +307,13 @@ h3 { font-size: 24px; font-weight: 500; }
 .wa-float svg { width: 26px; height: 26px; }
 .btn svg { width: 18px; height: 18px; flex-shrink: 0; }
 
+/* ========== RESPONSIVE CONTENT VISIBILITY ========== */
+.m-only { display: none; }
+@media (max-width: 768px) {
+  .d-only { display: none; }
+  .m-only { display: revert; }
+}
+
 /* ========== RESPONSIVE ========== */
 @media (max-width: 1024px) {
   .props-grid { grid-template-columns: repeat(3, 1fr); }
