@@ -73,13 +73,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const phone = document.getElementById('fphone').value;
       const email = document.getElementById('femail').value;
       const gender = document.getElementById('fgender').value;
+      const batch = document.getElementById('fbatch').value;
 
       // Show success
       document.getElementById('formContainer').style.display = 'none';
       document.getElementById('formSuccess').classList.add('show');
 
       // Open WhatsApp with pre-filled message
-      const msg = encodeURIComponent(`Hi Sneha! I'd like to join the free Saturday workshop.\n\nName: ${name}\nPhone: ${phone}\nEmail: ${email}`);
+      const msg = encodeURIComponent(`Hi Sneha! I'd like to book a free trial class.\n\nName: ${name}\nPhone: ${phone}\nPreferred batch: ${batch}\nEmail: ${email}`);
       setTimeout(() => {
         window.open(`https://wa.me/919560003507?text=${msg}`, '_blank');
       }, 1500);
