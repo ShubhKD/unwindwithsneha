@@ -1,5 +1,5 @@
 /* ========================================
-   UNWIND WITH SNEHA — v3 Clean Narrative
+   UNWIND WITH SNEHA - v3 Clean Narrative
    ======================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600;700&family=Satisfy&display=swap');
@@ -67,7 +67,7 @@ h3 { font-size: 24px; font-weight: 500; }
 .mobile-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.3); z-index: 150; }
 .mobile-overlay.open { display: block; }
 
-/* ========== HERO — Clean, single focus ========== */
+/* ========== HERO - Clean, single focus ========== */
 .hero { background: var(--ivory); padding-top: 72px; }
 .hero-inner {
   max-width: var(--container); margin: 0 auto; padding: 48px 40px;
@@ -88,7 +88,7 @@ h3 { font-size: 24px; font-weight: 500; }
 .hero-image { border-radius: 20px; overflow: hidden; aspect-ratio: 4/3; }
 .hero-image img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
 
-/* ========== TRUST BAR — Prominent ========== */
+/* ========== TRUST BAR - Prominent ========== */
 .trust-bar {
   background: var(--deep-violet); padding: 28px 40px;
 }
@@ -122,7 +122,7 @@ h3 { font-size: 24px; font-weight: 500; }
 .prop-card-info h3 { font-size: 15px; margin-bottom: 2px; }
 .prop-card-info p { font-size: 11px; color: var(--muted-violet); line-height: 1.4; }
 
-/* ========== JOURNEY SECTION — Narrative bridge ========== */
+/* ========== JOURNEY SECTION - Narrative bridge ========== */
 .journey { padding: 64px 0; background: var(--white); }
 .journey-flow { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
 .journey-step { text-align: center; padding: 32px 24px; border-radius: 20px; background: var(--ivory); position: relative; }
