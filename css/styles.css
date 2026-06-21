@@ -341,9 +341,22 @@ h3 { font-size: 24px; font-weight: 500; }
   .props-grid::-webkit-scrollbar-track { background: var(--soft-violet); border-radius: 2px; }
   .props-grid::-webkit-scrollbar-thumb { background: var(--lilac); border-radius: 2px; }
   .prop-card-img { height: 180px; }
-  .benefits-grid { grid-template-columns: 1fr; }
-  .class-grid, .test-grid { grid-template-columns: 1fr; }
-  .workshop-details { grid-template-columns: 1fr; }
+  /* horizontal carousels on mobile to cut vertical scroll */
+  .benefits-grid, .journey-flow, .test-grid {
+    display: flex; overflow-x: auto; gap: 14px;
+    scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;
+    padding: 4px 20px 16px; margin: 0 -20px 28px;
+  }
+  .benefit-card, .journey-step, .test-card { flex: 0 0 80%; scroll-snap-align: start; }
+  .benefits-grid::-webkit-scrollbar, .journey-flow::-webkit-scrollbar, .test-grid::-webkit-scrollbar { height: 4px; }
+  .benefits-grid::-webkit-scrollbar-track, .journey-flow::-webkit-scrollbar-track, .test-grid::-webkit-scrollbar-track { background: var(--soft-violet); border-radius: 2px; }
+  .benefits-grid::-webkit-scrollbar-thumb, .journey-flow::-webkit-scrollbar-thumb, .test-grid::-webkit-scrollbar-thumb { background: var(--lilac); border-radius: 2px; }
+  .workshop-details {
+    display: flex; overflow-x: auto; gap: 10px;
+    scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;
+    padding-bottom: 8px;
+  }
+  .workshop-detail { flex: 0 0 58%; scroll-snap-align: start; }
   .form-row { grid-template-columns: 1fr; }
   .gc-features { grid-template-columns: 1fr 1fr; }
   .gc-actions { flex-direction: column; }
