@@ -52,7 +52,8 @@ h3 { font-size: 24px; font-weight: 500; }
 .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 14px 0; background: transparent; transition: all 0.3s; }
 .nav.scrolled { background: rgba(255,255,255,0.97); backdrop-filter: blur(16px); border-bottom: 1px solid var(--soft-violet); padding: 10px 0; }
 .nav .container { display: flex; align-items: center; }
-.nav-brand { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 500; color: var(--deep-violet); white-space: nowrap; }
+.nav-brand { display: inline-flex; align-items: center; gap: 9px; font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 500; color: var(--deep-violet); white-space: nowrap; }
+.nav-logo { width: 32px; height: 32px; flex-shrink: 0; }
 .nav-links { display: flex; gap: 24px; margin-left: auto; list-style: none; }
 .nav-links a { font-size: 13px; color: var(--muted-violet); font-weight: 400; transition: color 0.3s; }
 .nav-links a:hover { color: var(--purple-deep); }

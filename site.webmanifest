@@ -1,0 +1,11 @@
+{
+  "name": "Unwind with Sneha",
+  "short_name": "Unwind",
+  "icons": [
+    {"src": "/icons/unwind-with-sneha-icon-cream-192.png", "sizes": "192x192", "type": "image/png"},
+    {"src": "/icons/unwind-with-sneha-icon-cream-512.png", "sizes": "512x512", "type": "image/png"}
+  ],
+  "theme_color": "#F7F3EF",
+  "background_color": "#F7F3EF",
+  "display": "standalone"
+}
