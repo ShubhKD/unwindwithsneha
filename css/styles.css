@@ -25,7 +25,7 @@
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 72px; }
-body { font-family: 'Outfit', sans-serif; color: var(--violet-grey); background: var(--white); line-height: 1.65; -webkit-font-smoothing: antialiased; font-size: 15px; }
+body { font-family: 'Outfit', sans-serif; color: var(--violet-grey); background: var(--white); line-height: 1.65; -webkit-font-smoothing: antialiased; font-size: 15px; overflow-x: hidden; }
 img { max-width: 100%; height: auto; display: block; }
 a { color: var(--purple-deep); text-decoration: none; }
 button { font-family: 'Outfit', sans-serif; cursor: pointer; }
@@ -255,7 +255,7 @@ h3 { font-size: 24px; font-weight: 500; }
 /* ========== GALLERY ========== */
 .gallery-strip { padding: 32px 0; background: var(--white); overflow: hidden; }
 .gallery-strip .section-header { margin-bottom: 16px; }
-.gallery-scroll { display: flex; gap: 12px; overflow-x: auto; padding: 4px 24px 12px; scroll-snap-type: x mandatory; }
+.gallery-scroll { display: flex; gap: 12px; overflow-x: auto; padding: 4px 24px 12px; padding-left: max(24px, calc((100vw - 1080px) / 2 + 40px)); scroll-snap-type: x mandatory; }
 .gallery-scroll::-webkit-scrollbar { height: 4px; }
 .gallery-scroll::-webkit-scrollbar-track { background: var(--soft-violet); border-radius: 2px; }
 .gallery-scroll::-webkit-scrollbar-thumb { background: var(--lilac); border-radius: 2px; }
@@ -331,18 +331,28 @@ h3 { font-size: 24px; font-weight: 500; }
   .trust-bar-inner { flex-wrap: wrap; gap: 32px; }
   .about-grid { grid-template-columns: 1fr; gap: 24px; }
   .about-image { aspect-ratio: 4/3; }
-  .props-grid { grid-template-columns: 1fr 1fr; }
+  .props-grid {
+    display: flex; overflow-x: auto; gap: 12px;
+    scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;
+    padding: 4px 20px 14px; margin: 0 -20px;
+  }
+  .prop-card { flex: 0 0 76%; scroll-snap-align: start; }
+  .props-grid::-webkit-scrollbar { height: 4px; }
+  .props-grid::-webkit-scrollbar-track { background: var(--soft-violet); border-radius: 2px; }
+  .props-grid::-webkit-scrollbar-thumb { background: var(--lilac); border-radius: 2px; }
+  .prop-card-img { height: 180px; }
   .benefits-grid { grid-template-columns: 1fr; }
   .class-grid, .test-grid { grid-template-columns: 1fr; }
   .workshop-details { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
-  .gc-features { grid-template-columns: 1fr; }
+  .gc-features { grid-template-columns: 1fr 1fr; }
   .gc-actions { flex-direction: column; }
   .gc-actions .btn { width: 100%; text-align: center; }
   .footer-inner { flex-direction: column; }
   .about, .props, .workshop-section, .group-classes, .testimonials, .faq, .journey { padding: 40px 0; }
 }
 @media (max-width: 480px) {
-  .props-grid { grid-template-columns: 1fr; }
+  .prop-card { flex-basis: 82%; }
+  .gc-features { grid-template-columns: 1fr; }
   .proof-wall img { height: 220px; }
 }
