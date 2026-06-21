@@ -278,6 +278,22 @@ h3 { font-size: 24px; font-weight: 500; }
 .wa-float { position: fixed; bottom: 20px; right: 20px; z-index: 90; width: 52px; height: 52px; border-radius: 50%; background: #25D366; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(37, 211, 102, 0.35); font-size: 26px; color: #fff; transition: transform 0.3s; }
 .wa-float:hover { transform: scale(1.1); }
 
+/* ========== ICONS ========== */
+.wd-icon, .gc-icon, .benefit-icon, .footer-social a, .wa-float, .form-success .check { display: inline-flex; align-items: center; justify-content: center; }
+.wd-icon { color: var(--purple-deep); }
+.wd-icon svg { width: 22px; height: 22px; }
+.gc-icon { color: var(--purple-deep); }
+.gc-icon svg { width: 20px; height: 20px; }
+.benefit-icon svg { width: 30px; height: 30px; }
+.benefit-calm .benefit-icon { color: #7C3AED; }
+.benefit-flex .benefit-icon { color: #D97706; }
+.benefit-burn .benefit-icon { color: #DC2626; }
+.form-success .check { color: var(--green); }
+.form-success .check svg { width: 54px; height: 54px; }
+.footer-social a svg { width: 18px; height: 18px; }
+.wa-float svg { width: 26px; height: 26px; }
+.btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+
 /* ========== RESPONSIVE ========== */
 @media (max-width: 1024px) {
   .props-grid { grid-template-columns: repeat(3, 1fr); }
