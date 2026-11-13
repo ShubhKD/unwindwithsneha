@@ -64,6 +64,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 30);
   }
 
+  // Online class clip: play only while on screen; respect reduced motion
+  const onlineVideo = document.querySelector('.online-video video');
+  if (onlineVideo) {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion) {
+      onlineVideo.removeAttribute('autoplay');
+      onlineVideo.pause();
+      onlineVideo.controls = true;
+    } else if ('IntersectionObserver' in window) {
+      new IntersectionObserver(([entry]) => {
+        if (entry.isIntersecting) onlineVideo.play().catch(() => { onlineVideo.controls = true; });
+        else onlineVideo.pause();
+      }, { threshold: 0.25 }).observe(onlineVideo);
+    }
+  }
+
   // Workshop Form
   const form = document.getElementById('workshopForm');
   if (form) {
