@@ -85,21 +85,40 @@ document.addEventListener('DOMContentLoaded', () => {
   if (form) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      const name = document.getElementById('fname').value;
-      const phone = document.getElementById('fphone').value;
-      const email = document.getElementById('femail').value;
-      const gender = document.getElementById('fgender').value;
-      const batch = document.getElementById('fbatch').value;
+      const val = (id) => document.getElementById(id).value.trim();
+      const lead = {
+        name: val('fname'),
+        phone: val('fphone'),
+        gender: val('fgender'),
+        batch: val('fbatch'),
+        email: val('femail'),
+        website: val('fwebsite'), // honeypot: real people leave this empty
+        page: location.href,
+        referrer: document.referrer
+      };
 
-      // Show success
+      // 1. Log the booking to the leads sheet first, so it's captured even if they never press Send in WhatsApp.
+      //    sendBeacon survives the page switching to WhatsApp; text/plain avoids a CORS preflight to Apps Script.
+      const endpoint = (window.UWS_CONFIG || {}).leadsEndpoint;
+      if (endpoint && !lead.website) {
+        const body = JSON.stringify(lead);
+        const sent = navigator.sendBeacon && navigator.sendBeacon(endpoint, new Blob([body], { type: 'text/plain;charset=utf-8' }));
+        if (!sent) fetch(endpoint, { method: 'POST', mode: 'no-cors', keepalive: true, headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body }).catch(() => {});
+      }
+      if (window.uwsTrack) window.uwsTrack('generate_lead', { form: 'free_trial', batch: lead.batch });
+
+      // 2. Pre-filled WhatsApp message to Sneha
+      const lines = [`Hi Sneha! I'd like to book a free trial class.`, '', `Name: ${lead.name}`, `Phone: ${lead.phone}`, `Preferred batch: ${lead.batch}`];
+      if (lead.gender) lines.push(`Gender: ${lead.gender}`);
+      if (lead.email) lines.push(`Email: ${lead.email}`);
+      const waUrl = `https://wa.me/919560003507?text=${encodeURIComponent(lines.join('\n'))}`;
+
+      // 3. Show the "one last step" screen with a manual button, then open WhatsApp
+      //    straight away (inside the tap) so iPhone Safari doesn't block it.
+      document.getElementById('waSendBtn').href = waUrl;
       document.getElementById('formContainer').style.display = 'none';
       document.getElementById('formSuccess').classList.add('show');
-
-      // Open WhatsApp with pre-filled message
-      const msg = encodeURIComponent(`Hi Sneha! I'd like to book a free trial class.\n\nName: ${name}\nPhone: ${phone}\nPreferred batch: ${batch}\nEmail: ${email}`);
-      setTimeout(() => {
-        window.open(`https://wa.me/919560003507?text=${msg}`, '_blank');
-      }, 1500);
+      window.open(waUrl, '_blank');
     });
   }
 

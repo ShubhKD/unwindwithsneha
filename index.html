@@ -287,13 +287,16 @@
               <label class="form-label" for="femail">Email</label>
               <input class="form-input" type="email" id="femail" name="email" placeholder="e.g. gunwin.samtani@gmail.com">
             </div>
+            <div class="form-hp" aria-hidden="true"><label for="fwebsite">Website</label><input type="text" id="fwebsite" name="website" tabindex="-1" autocomplete="off"></div>
             <button type="submit" class="btn btn-primary form-submit">Book My Free Trial</button>
           </form>
         </div>
         <div class="form-success" id="formSuccess">
           <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg></div>
-          <h3>You're In!</h3>
-          <p>We'll send your Zoom link on WhatsApp for your chosen batch. See you on the mat!</p>
+          <h3>One last step!</h3>
+          <p>WhatsApp should open with your booking message ready. <strong>Tap Send</strong> so Sneha can share your Zoom link for your chosen batch.</p>
+          <a id="waSendBtn" href="https://wa.me/919560003507" class="btn btn-wa form-wa-btn" target="_blank" rel="noopener">Send on WhatsApp</a>
+          <p class="form-wa-note">WhatsApp didn't open? Tap the button above.</p>
         </div>
       </div>
     </div>
@@ -511,6 +514,8 @@
 ]}
 </script>
 
+<script src="js/config.js"></script>
+<script src="js/analytics.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>
