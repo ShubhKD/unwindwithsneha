@@ -6,5 +6,5 @@ window.UWS_CONFIG = {
 
   // Google Apps Script web-app URL that appends booking-form entries to the leads Google Sheet,
   // e.g. 'https://script.google.com/macros/s/AKfy.../exec'
-  leadsEndpoint: ''
+  leadsEndpoint: 'https://script.google.com/macros/s/AKfycbz4N-VbyLRw_fqORuo08cXIRc5KbXD4wgTOhe1DcTFY8f3dzo8ht5OEGvdqUB6nob5F/exec'
 };
