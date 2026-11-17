@@ -155,19 +155,17 @@ h3 { font-size: 24px; font-weight: 500; }
 
 /* ========== EXPERIENCE AN ONLINE CLASS ========== */
 .online-class { padding: 64px 0; background: var(--deep-violet); }
-.online-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 48px; align-items: center; }
+.online-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; grid-template-areas: "intro points" "cta points"; column-gap: 56px; row-gap: 20px; align-items: start; }
+.online-intro { grid-area: intro; }
+.online-cta { grid-area: cta; justify-self: start; }
 .online-eyebrow { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--lilac); margin-bottom: 10px; }
 .online-eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); animation: pulse 2s infinite; }
-.online-content h2 { color: #fff; margin-bottom: 4px; }
-.online-content .tagline { font-size: 19px; color: var(--purple-light); margin-bottom: 18px; }
-.online-points { list-style: none; display: grid; gap: 14px; margin-bottom: 28px; }
+.online-intro h2 { color: #fff; margin-bottom: 4px; }
+.online-intro .tagline { font-size: 19px; color: var(--purple-light); }
+.online-points { grid-area: points; list-style: none; display: grid; gap: 14px; }
 .online-points li { padding-left: 16px; border-left: 2px solid rgba(196, 181, 253, 0.35); }
 .online-points strong { display: block; font-size: 15px; color: #fff; font-weight: 600; }
 .online-points span { font-size: 14px; color: #C9C5D8; }
-.online-media { display: grid; gap: 16px; }
-.online-video { margin: 0; }
-.online-video video { width: 100%; aspect-ratio: 1280 / 540; object-fit: cover; display: block; border-radius: 16px; background: #1f1d2b; box-shadow: 0 12px 40px rgba(0,0,0,0.35); }
-.online-video figcaption { font-size: 12px; color: var(--muted-violet); margin-top: 10px; text-align: center; }
 .class-reel { margin-top: 44px; }
 .class-reel-label { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--lilac); margin-bottom: 14px; }
 .class-reel-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
@@ -374,7 +372,7 @@ h3 { font-size: 24px; font-weight: 500; }
   .workshop-form-wrap { border-left: none; border-top: 1px solid var(--soft-violet); }
   .journey-flow { grid-template-columns: 1fr; gap: 16px; }
   .journey-arrow { display: none; }
-  .online-grid { grid-template-columns: 1fr; gap: 28px; }
+  .online-grid { grid-template-columns: 1fr; grid-template-areas: "intro" "points" "cta"; row-gap: 22px; }
   .video-tests { grid-template-columns: 1fr; }
   .class-reel-grid { grid-template-columns: repeat(2, 1fr); }
 }
@@ -420,7 +418,7 @@ h3 { font-size: 24px; font-weight: 500; }
   .gc-actions .btn { width: 100%; text-align: center; }
   .footer-inner { flex-direction: column; }
   .about, .props, .workshop-section, .group-classes, .testimonials, .faq, .journey, .online-class { padding: 40px 0; }
-  .online-content .btn { width: 100%; }
+  .online-cta { width: 100%; justify-self: stretch; }
   .voice-card { grid-template-columns: 1fr; gap: 20px; padding: 22px; }
   .voice-player h3 { font-size: 22px; }
   .voice-quotes li { font-size: 14px; }

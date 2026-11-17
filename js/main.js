@@ -64,8 +64,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 30);
   }
 
-  // Online class clips: play muted only while on screen; respect reduced motion
-  const classVideos = document.querySelectorAll('.online-video video, .class-clip video');
+  // Live-class clips: play muted only while on screen; respect reduced motion
+  const classVideos = document.querySelectorAll('.class-clip video');
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   classVideos.forEach((v) => {
     if (reduceMotion) {
