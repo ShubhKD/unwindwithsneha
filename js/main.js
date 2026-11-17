@@ -64,21 +64,27 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 30);
   }
 
-  // Online class clip: play only while on screen; respect reduced motion
-  const onlineVideo = document.querySelector('.online-video video');
-  if (onlineVideo) {
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // Online class clips: play muted only while on screen; respect reduced motion
+  const classVideos = document.querySelectorAll('.online-video video, .class-clip video');
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  classVideos.forEach((v) => {
     if (reduceMotion) {
-      onlineVideo.removeAttribute('autoplay');
-      onlineVideo.pause();
-      onlineVideo.controls = true;
+      v.removeAttribute('autoplay');
+      v.pause();
+      v.controls = true;
     } else if ('IntersectionObserver' in window) {
       new IntersectionObserver(([entry]) => {
-        if (entry.isIntersecting) onlineVideo.play().catch(() => { onlineVideo.controls = true; });
-        else onlineVideo.pause();
-      }, { threshold: 0.25 }).observe(onlineVideo);
+        if (entry.isIntersecting) v.play().catch(() => { v.controls = true; });
+        else v.pause();
+      }, { threshold: 0.25 }).observe(v);
     }
-  }
+  });
+
+  // Student video testimonials: only one plays at a time
+  const testVideos = document.querySelectorAll('.video-test video');
+  testVideos.forEach((v) => v.addEventListener('play', () => {
+    testVideos.forEach((o) => { if (o !== v) o.pause(); });
+  }));
 
   // Workshop Form
   const form = document.getElementById('workshopForm');

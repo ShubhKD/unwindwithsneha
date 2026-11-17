@@ -57,6 +57,11 @@
       audio.addEventListener('play', () => track('voice_note_play', { testimonial: 'first_student' }), { once: true });
       audio.addEventListener('ended', () => track('voice_note_complete', { testimonial: 'first_student' }), { once: true });
     }
+    document.querySelectorAll('.video-test video').forEach((v) => {
+      const id = v.dataset.testimonial;
+      v.addEventListener('play', () => track('video_testimonial_play', { testimonial: id }), { once: true });
+      v.addEventListener('ended', () => track('video_testimonial_complete', { testimonial: id }), { once: true });
+    });
     document.querySelectorAll('.faq-item').forEach((d) => {
       d.addEventListener('toggle', () => { if (d.open) track('faq_open', { question: d.querySelector('summary').textContent.trim() }); });
     });
